@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_state_project/pages/homepage.dart';
 import 'package:provider_state_project/provider/themprovider.dart';
 
 class Darkthem extends StatefulWidget {
@@ -35,6 +36,15 @@ class _DarkthemState extends State<Darkthem> {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Homepage()),
+                      );
+                    },
+                    child: Text("Go to Home Page"),
+                  ),
                   Icon(
                     themeProvider.isDarkMode
                         ? Icons.dark_mode
